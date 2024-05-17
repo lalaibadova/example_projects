@@ -1,0 +1,22 @@
+nav{
+    background-color: beige;
+    padding: 20px 0;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+   gap: 20px;
+} 
+nav ul li{
+    list-style-type: none;
+}
+nav a{
+    text-decoration: none;
+    color: brown;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
