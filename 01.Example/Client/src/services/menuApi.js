@@ -8,7 +8,7 @@ export const menuApi = createApi({
       query: () => `menu`,
     }),
     getMenuById: builder.query({
-      query: (id) => `menu/:${id}`,
+      query: (id) => `menu/${id}`,
     }),
     deleteMenu: builder.mutation({
       query: (id) => ({

@@ -6,43 +6,41 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Container, Grid } from "@mui/material";
-import { useGetAllMenuQuery ,useGetMenuByIdQuery} from "../../services/menuApi";
-import  {Link, useParams} from "react-router-dom"
+import { useGetAllMenuQuery } from "../../services/menuApi";
+import { Link } from "react-router-dom";
 const Home = () => {
-  const { data:menu } = useGetAllMenuQuery();
-//   const {id}=useParams()
-// const{data:product}=useGetMenuByIdQuery(id)
-// console.log(id);
+  const { data: menu } = useGetAllMenuQuery();
+
   return (
-   <Container>
-     <Grid container spacing={2}>
-      <Card sx={{ maxWidth: 345, marginTop:10}}>
-        {menu &&
-          menu?.data.map((item) => {
-            return (
-              <Grid item xs={8}>
-                <CardMedia
-                  sx={{ height: 100 }}
-                  image={item.image}
-                  title={item.title}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    <b>{item.title}</b>
-                  </Typography>
-                  <Typography variant="body2">
-                   {item.price}$
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button><Link>Detail</Link></Button>
-                </CardActions>
-              </Grid>
-            );
-          })}
-      </Card>
-    </Grid>
-   </Container>
+    <Container>
+      <Grid container spacing={2}>
+        <Card sx={{ maxWidth: 345, marginTop: 10 }}>
+          {menu &&
+            menu.data.map((item) => {
+                return (
+                <Grid item xs={8}>
+                  <CardMedia
+                    sx={{ height: 100 }}
+                    image={item.image}
+                    title={item.title}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      <b>{item.title}</b>
+                    </Typography>
+                    <Typography variant="body2">{item.price}$</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button>
+                      <Link to={`/detail/${item._id}`}>Detail</Link>
+                    </Button>
+                  </CardActions>
+                </Grid>
+              );
+            })}
+        </Card>
+      </Grid>
+    </Container>
   );
 };
 
