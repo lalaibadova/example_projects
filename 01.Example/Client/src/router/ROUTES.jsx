@@ -7,6 +7,7 @@ import Blog from "../pages/Blog";
 import Contact from "../pages/Contact";
 import Reservation from "../pages/Reservation";
 import Detail from "../pages/Detail";
+import AddProduct from "../pages/AddProduct";
 
 export const ROUTES = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const ROUTES = createBrowserRouter([
       {
         path: "reservation",
         element: <Reservation />,
+      },
+      {
+        path: "add-product",
+        element: <AddProduct />,
       },
     ],
   },

@@ -10,9 +10,9 @@ import { useGetAllMenuQuery ,useGetMenuByIdQuery} from "../../services/menuApi";
 import  {Link, useParams} from "react-router-dom"
 const Home = () => {
   const { data:menu } = useGetAllMenuQuery();
-  const {id}=useParams()
-const{data:product}=useGetMenuByIdQuery(id)
-console.log(id);
+//   const {id}=useParams()
+// const{data:product}=useGetMenuByIdQuery(id)
+// console.log(id);
   return (
    <Container>
      <Grid container spacing={2}>
@@ -35,7 +35,7 @@ console.log(id);
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button><Link to={`/${product.id}`}>Detail</Link></Button>
+                  <Button><Link>Detail</Link></Button>
                 </CardActions>
               </Grid>
             );
