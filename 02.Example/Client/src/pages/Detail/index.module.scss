@@ -1,0 +1,17 @@
+.detailPage { 
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  .card {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 100px;
+    .cardImg {
+        margin: 0 auto;
+      width: 400px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
