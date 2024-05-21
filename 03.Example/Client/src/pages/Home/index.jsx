@@ -127,6 +127,64 @@ const Home = () => {
             })}
         </div>
       </Container>
+      <Container>
+        <div className={style.offer}>
+          <h1>News</h1>
+          <p>
+            Far far away, behind the word mountains, far from the countries <br /> Vokalia and Consonantia, there live the blind texts.
+          </p>
+        </div>
+       <div  className={style.cards}>
+         <div className={style.card}>
+          <div className={style.cardImg}>
+            <img
+              src="https://preview.colorlib.com/theme/eatwell/images/offer_1.jpg"
+              alt=""
+            />
+          </div>
+          <div className={style.cardTitle}>
+            <h2>We Have Dilecious Food</h2>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+            <button>Read More</button>
+          </div>
+        </div>
+         <div className={style.card}>
+          <div className={style.cardImg}>
+            <img
+              src="https://preview.colorlib.com/theme/eatwell/images/offer_2.jpg"
+              alt=""
+            />
+          </div>
+          <div className={style.cardTitle}>
+            <h2>Chef Special Menu</h2>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+            <button>Read More</button>
+          </div>
+        </div>
+         <div className={style.card}>
+          <div className={style.cardImg}>
+            <img
+              src="https://preview.colorlib.com/theme/eatwell/images/offer_3.jpg"
+              alt=""
+            />
+          </div>
+          <div className={style.cardTitle}>
+            <h2>Merriage Celebrations</h2>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+            <button>Read More</button>
+          </div>
+        </div>
+       </div>
+      </Container>
     </>
   );
 };
