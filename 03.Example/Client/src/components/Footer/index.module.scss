@@ -1,0 +1,40 @@
+.footer {
+  background-color: #222;
+  padding: 100px 0;
+  .col {
+    h2 {
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    p {
+      color: rgba(255, 255, 255, 0.6);
+      padding-right: 40px;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+  .icon {
+    ul {
+      margin: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      li {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.6);
+        list-style: none;
+        text-decoration: none;
+      }
+    }
+    h3 {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+  }
+}

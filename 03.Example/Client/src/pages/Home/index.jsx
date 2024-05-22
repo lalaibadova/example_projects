@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useGetAllFoodQuery } from "../../services/foodApi";
 import Container from "@mui/material/Container";
 import style from "./index.module.scss";
@@ -8,9 +8,16 @@ import { BasketContext } from "../../context/basketContext";
 import { FavsContext } from "../../context/favsContext";
 const Home = () => {
   const { data } = useGetAllFoodQuery();
-  console.log(data);
   const { basket, setBasket, setLocalBasket } = useContext(BasketContext);
   const { favs, setFavs, setLocalFavs } = useContext(FavsContext);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredData = data
+    ? data.data.filter((food) =>
+        food.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
+
   return (
     <>
       <div className={style.banner}>
@@ -55,9 +62,16 @@ const Home = () => {
             <br /> Vokalia and Consonantia, there live the blind texts.
           </p>
         </div>
+        <input
+          type="text"
+          placeholder="Search by title"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+
         <div className={style.cards}>
-          {data &&
-            data.data.map((food) => {
+          {filteredData &&
+            filteredData.map((food) => {
               return (
                 <div className={style.card}>
                   <div className={style.cardImg}>
@@ -131,59 +145,60 @@ const Home = () => {
         <div className={style.offer}>
           <h1>News</h1>
           <p>
-            Far far away, behind the word mountains, far from the countries <br /> Vokalia and Consonantia, there live the blind texts.
+            Far far away, behind the word mountains, far from the countries{" "}
+            <br /> Vokalia and Consonantia, there live the blind texts.
           </p>
         </div>
-       <div  className={style.cards}>
-         <div className={style.card}>
-          <div className={style.cardImg}>
-            <img
-              src="https://preview.colorlib.com/theme/eatwell/images/offer_1.jpg"
-              alt=""
-            />
+        <div className={style.cards}>
+          <div className={style.card}>
+            <div className={style.cardImg}>
+              <img
+                src="https://preview.colorlib.com/theme/eatwell/images/offer_1.jpg"
+                alt=""
+              />
+            </div>
+            <div className={style.cardTitle}>
+              <h2>We Have Dilecious Food</h2>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <button>Read More</button>
+            </div>
           </div>
-          <div className={style.cardTitle}>
-            <h2>We Have Dilecious Food</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
-            </p>
-            <button>Read More</button>
+          <div className={style.card}>
+            <div className={style.cardImg}>
+              <img
+                src="https://preview.colorlib.com/theme/eatwell/images/offer_2.jpg"
+                alt=""
+              />
+            </div>
+            <div className={style.cardTitle}>
+              <h2>Chef Special Menu</h2>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
+          <div className={style.card}>
+            <div className={style.cardImg}>
+              <img
+                src="https://preview.colorlib.com/theme/eatwell/images/offer_3.jpg"
+                alt=""
+              />
+            </div>
+            <div className={style.cardTitle}>
+              <h2>Merriage Celebrations</h2>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <button>Read More</button>
+            </div>
           </div>
         </div>
-         <div className={style.card}>
-          <div className={style.cardImg}>
-            <img
-              src="https://preview.colorlib.com/theme/eatwell/images/offer_2.jpg"
-              alt=""
-            />
-          </div>
-          <div className={style.cardTitle}>
-            <h2>Chef Special Menu</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
-            </p>
-            <button>Read More</button>
-          </div>
-        </div>
-         <div className={style.card}>
-          <div className={style.cardImg}>
-            <img
-              src="https://preview.colorlib.com/theme/eatwell/images/offer_3.jpg"
-              alt=""
-            />
-          </div>
-          <div className={style.cardTitle}>
-            <h2>Merriage Celebrations</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
-            </p>
-            <button>Read More</button>
-          </div>
-        </div>
-       </div>
       </Container>
     </>
   );

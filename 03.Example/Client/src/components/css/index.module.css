@@ -1,0 +1,31 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  display: flex;
+  z-index: 999;
+  justify-content: space-around;
+  align-items: center;
+  background-color: beige;
+}
+.header .logo a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+}
+.header .menu ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.header .menu ul li {
+  list-style: none;
+}
+.header .menu ul li .link {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
