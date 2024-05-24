@@ -1,13 +1,10 @@
 .cards{
     margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
     .card{
         padding-top: 20px;
         border: 1px solid black;
         min-height: 400px;
+        margin: 10px 10px;
         .cardImg{
             margin: 0 auto;
             text-align: center;

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useGetAllFoundationQuery } from "../../services/foundationApi";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import { Col, Row } from "antd";
 import style from "./index.module.scss";
 import { BasketContext } from "../../context/BasketContext";
 import { FavoriteContext } from "../../context/FavoriteContext";
@@ -19,20 +19,24 @@ const Home = () => {
     : [];
   return (
     <>
-      <input
-        style={{ marginTop: "100px" }}
-        type="text"
-        placeholder="Search by title"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
       <Container>
-        <Grid container spacing={2}>
-          <div className={style.cards}>
+        <input
+          style={{
+            marginTop: "100px",
+            padding: "10px 40px",
+            border: "2px solid red",
+          }}
+          type="text"
+          placeholder="Search by title"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <div className={style.cards}>
+          <Row>
             {filtered &&
               filtered.map((item) => {
                 return (
-                  <Grid item xs={4}>
+                  <Col span={8}>
                     <div className={style.card}>
                       <div className={style.cardImg}>
                         <img src={item.img} alt="" />
@@ -92,11 +96,11 @@ const Home = () => {
                         </button>
                       </div>
                     </div>
-                  </Grid>
+                  </Col>
                 );
               })}
-          </div>
-        </Grid>
+          </Row>
+        </div>
       </Container>
     </>
   );
